@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="da" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>asmblii – design concept</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap">
+<style>
+:root{--bg:#fff;--fg:#0a0a0a;--mute:#6b6b6b;--line:#e2e2e2;--acc:#c6ff3d;--ink:#0a0a0a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0a0a;--fg:#fff;--mute:#9a9a9a;--line:#262626}}
+:root[data-theme="dark"]{--bg:#0a0a0a;--fg:#fff;--mute:#9a9a9a;--line:#262626}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.6 Inter,system-ui,sans-serif}
+h1,h2,h3,.logo{font-family:"Space Grotesk",system-ui,sans-serif;letter-spacing:-.02em}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-weight:700;font-size:22px}.logo i{color:var(--acc);font-style:normal;background:#0a0a0a;padding:0 2px}
+nav ul{display:flex;gap:24px;list-style:none;padding:0;font-size:15px;color:var(--mute)}
+nav a{color:inherit;text-decoration:none}nav a:hover{color:var(--fg)}
+.lang{border:1px solid var(--line);background:none;color:var(--fg);padding:6px 12px;font:500 13px Inter,sans-serif;cursor:pointer;border-radius:99px}
+.hero{background:#0a0a0a;color:#fff;padding:120px 0 96px}
+.hero p.k{color:var(--acc);font:500 14px "Space Grotesk",sans-serif;text-transform:uppercase;letter-spacing:.12em}
+.hero h1{font-size:clamp(44px,8vw,96px);line-height:1;margin:20px 0 28px;max-width:12ch}
+.hero p.l{max-width:56ch;color:#bdbdbd;font-size:19px}
+.btns{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
+.btn{padding:14px 24px;border-radius:99px;text-decoration:none;font-weight:500;font-size:15px;border:1px solid #fff;color:#fff}
+.btn.p{background:var(--acc);border-color:var(--acc);color:#0a0a0a}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:24px;margin-top:72px;border-top:1px solid #262626;padding-top:32px}
+.stats b{display:block;font:700 36px "Space Grotesk",sans-serif;color:#fff}.stats span{color:#9a9a9a;font-size:14px}
+section{padding:96px 0;border-bottom:1px solid var(--line)}
+section h2{font-size:clamp(30px,4vw,48px);margin-bottom:12px}
+section .sub{color:var(--mute);max-width:60ch;margin-bottom:48px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.card{background:var(--bg);padding:32px}
+.card h3{font-size:22px;margin-bottom:8px}.card p{color:var(--mute);font-size:15px}
+.card .n{font:500 13px "Space Grotesk",sans-serif;color:var(--mute);margin-bottom:40px;display:block}
+.case{display:flex;flex-direction:column;justify-content:space-between;min-height:260px;transition:background .2s}
+.case:hover{background:#0a0a0a;color:#fff}.case:hover p{color:#bdbdbd}
+:root[data-theme="dark"] .case:hover{background:#fff;color:#0a0a0a}
+:root[data-theme="dark"] .case:hover p{color:#555}
+.tag{font-size:12px;border:1px solid currentColor;border-radius:99px;padding:2px 10px;align-self:flex-start;color:var(--mute)}
+.ph{font-size:13px;color:var(--mute);margin-top:24px}
+.team .av{width:72px;height:72px;border-radius:50%;background:var(--line);margin-bottom:16px}
+.cta{background:#0a0a0a;color:#fff;border:0;text-align:left}
+.cta h2{font-size:clamp(36px,6vw,72px);max-width:14ch}
+.cta a.m{color:var(--acc);font:700 clamp(20px,3vw,32px) "Space Grotesk",sans-serif;text-decoration:none}
+footer{padding:32px 0;color:var(--mute);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media(max-width:760px){nav ul{display:none}.hero{padding:80px 0 64px}section{padding:64px 0}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<span class="logo">asm<i>b</i>lii</span>
+<ul><li><a href="#services" data-t="n1"></a></li><li><a href="#cases" data-t="n2"></a></li><li><a href="#insights" data-t="n3"></a></li><li><a href="#team" data-t="n4"></a></li><li><a href="#careers" data-t="n5"></a></li><li><a href="#contact" data-t="n6"></a></li></ul>
+<div style="display:flex;gap:8px"><button class="lang" id="theme" aria-label="Toggle light/dark mode">☾</button><button class="lang" id="lang" aria-label="Language">DA / EN</button></div>
+</nav></div></header>
+
+<div class="hero"><div class="wrap">
+<p class="k" data-t="k"></p>
+<h1 data-t="h1"></h1>
+<p class="l" data-t="lead"></p>
+<div class="btns"><a class="btn p" href="#contact" data-t="c1"></a><a class="btn" href="#cases" data-t="c2"></a></div>
+<div class="stats"><div><b>Sitecore</b><span data-t="s1"></span></div><div><b>K8s</b><span data-t="s2"></span></div><div><b>C# · JS</b><span data-t="s3"></span></div><div><b>Headless</b><span data-t="s4"></span></div></div>
+</div></div>
+
+<section id="services"><div class="wrap">
+<h2 data-t="sv"></h2><p class="sub" data-t="svs"></p>
+<div class="grid">
+<div class="card"><span class="n">01</span><h3>Sitecore &amp; DXP</h3><p data-t="v1"></p></div>
+<div class="card"><span class="n">02</span><h3>Headless</h3><p data-t="v2"></p></div>
+<div class="card"><span class="n">03</span><h3>Cloud &amp; DevOps</h3><p data-t="v3"></p></div>
+<div class="card"><span class="n">04</span><h3 data-t="v4h"></h3><p data-t="v4"></p></div>
+</div></div></section>
+
+<section id="cases"><div class="wrap">
+<h2 data-t="cs"></h2><p class="sub" data-t="css"></p>
+<div class="grid">
+<a class="card case"><span class="tag">Sitecore XM Cloud</span><div><h3>Client name</h3><p data-t="cp"></p></div></a>
+<a class="card case"><span class="tag">Headless · Next.js</span><div><h3>Client name</h3><p data-t="cp"></p></div></a>
+<a class="card case"><span class="tag">Kubernetes</span><div><h3>Client name</h3><p data-t="cp"></p></div></a>
+</div><p class="ph" data-t="ph"></p></div></section>
+
+<section id="insights"><div class="wrap">
+<h2 data-t="in"></h2><p class="sub" data-t="ins"></p>
+<div class="grid">
+<div class="card"><span class="n">Sitecore</span><h3 data-t="a1"></h3></div>
+<div class="card"><span class="n">DevOps</span><h3 data-t="a2"></h3></div>
+<div class="card"><span class="n">Arkitektur</span><h3 data-t="a3"></h3></div>
+</div></div></section>
+
+<section id="team" class="team"><div class="wrap">
+<h2 data-t="tm"></h2><p class="sub" data-t="tms"></p>
+<div class="grid">
+<div class="card"><div class="av"></div><h3>Name Surname</h3><p>Role</p></div>
+<div class="card"><div class="av"></div><h3>Name Surname</h3><p>Role</p></div>
+<div class="card"><div class="av"></div><h3>Name Surname</h3><p>Role</p></div>
+</div></div></section>
+
+<section id="careers"><div class="wrap">
+<h2 data-t="cr"></h2><p class="sub" data-t="crs"></p>
+<a class="btn" style="color:var(--fg);border-color:var(--fg)" href="#contact" data-t="crb"></a>
+</div></section>
+
+<section id="contact" class="cta"><div class="wrap">
+<h2 data-t="ct"></h2><p class="sub" style="color:#bdbdbd;margin:16px 0 28px" data-t="cts"></p>
+<a class="m" href="#">+45 3223 7777</a>
+</div></section>
+
+<footer><div class="wrap"><span>asmblii A/S · Carl Jacobsens Vej 16C, 2. th. · 2500 Valby</span><span>CVR 43849476</span></div></footer>
+
+<script>
+const D={da:{n1:"Services",n2:"Cases",n3:"Indsigt",n4:"Team",n5:"Karriere",n6:"Kontakt",k:"Sitecore · Cloud · DevOps",h1:"Koden bag din success",lead:"Vi udvikler skalerbare og fremtidssikrede digitale løsninger. Fra Sitecore og headless til Kubernetes og automatisering.",c1:"Book en samtale",c2:"Se vores cases",s1:"Certificeret ekspertise",s2:"Cloud-native drift",s3:"Moderne stack",s4:"Fremtidssikret arkitektur",sv:"Hvad vi gør",svs:"Fire områder, ét team. Vi bygger, driver og optimerer platformen bag jeres digitale forretning.",v1:"Implementering, opgradering og videreudvikling af Sitecore-platforme.",v2:"Hurtige frontends på headless arkitektur, koblet til jeres DXP.",v3:"Kubernetes, CI/CD og drift, så release bliver en rutine.",v4h:"Arkitektur",v4:"Rådgivning og moderne softwarearkitektur, der kan skalere.",cs:"Cases",css:"Resultater frem for buzzwords.",cp:"Kort resultat: fx 40 % hurtigere sideindlæsning og release på minutter.",ph:"Pladsholdere. Erstattes med rigtige kunder og tal.",in:"Indsigt",ins:"Praktisk viden om Sitecore, cloud og DevOps.",a1:"Placeholder: Sitecore XM Cloud i praksis",a2:"Placeholder: CI/CD for Sitecore med Kubernetes",a3:"Placeholder: Hvornår giver headless mening?",tm:"Team",tms:"Erfarne udviklere, som I taler direkte med.",cr:"Karriere",crs:"Vi leder altid efter dygtige udviklere, der vil bygge ting, der holder.",crb:"Skriv til os",ct:"Lad os bygge noget, der skalerer.",cts:"Fortæl os om jeres udfordring. Vi vender tilbage inden for en arbejdsdag."},
+en:{n1:"Services",n2:"Cases",n3:"Insights",n4:"Team",n5:"Careers",n6:"Contact",k:"Sitecore · Cloud · DevOps",h1:"The code behind your success",lead:"We build scalable, future-proof digital solutions. From Sitecore and headless to Kubernetes and automation.",c1:"Book a conversation",c2:"See our cases",s1:"Certified expertise",s2:"Cloud-native operations",s3:"Modern stack",s4:"Future-proof architecture",sv:"What we do",svs:"Four areas, one team. We build, run and optimise the platform behind your digital business.",v1:"Implementation, upgrades and continuous development of Sitecore platforms.",v2:"Fast frontends on headless architecture, connected to your DXP.",v3:"Kubernetes, CI/CD and operations that make releasing routine.",v4h:"Architecture",v4:"Advisory and modern software architecture built to scale.",cs:"Cases",css:"Results over buzzwords.",cp:"Short result: e.g. 40% faster page loads and releases in minutes.",ph:"Placeholders. To be replaced with real clients and figures.",in:"Insights",ins:"Practical knowledge on Sitecore, cloud and DevOps.",a1:"Placeholder: Sitecore XM Cloud in practice",a2:"Placeholder: CI/CD for Sitecore on Kubernetes",a3:"Placeholder: When does headless make sense?",tm:"Team",tms:"Experienced developers you talk to directly.",cr:"Careers",crs:"We are always looking for strong developers who want to build things that last.",crb:"Get in touch",ct:"Let's build something that scales.",cts:"Tell us about your challenge. We reply within one working day."}};
+let L="da";
+function r(){document.documentElement.lang=L;document.querySelectorAll("[data-t]").forEach(e=>e.textContent=D[L][e.dataset.t])}
+document.getElementById("lang").onclick=()=>{L=L==="da"?"en":"da";r()};r();
+const tb=document.getElementById("theme");
+function setTheme(t,save){document.documentElement.dataset.theme=t;tb.textContent=t==="dark"?"☀":"☾";if(save){try{localStorage.setItem("theme",t)}catch(e){}}}
+let st=null;try{st=localStorage.getItem("theme")}catch(e){}
+setTheme(st||"dark",false);
+tb.onclick=()=>setTheme(document.documentElement.dataset.theme==="dark"?"light":"dark",true);
+</script>
+</body>
+</html>
